@@ -1,0 +1,12 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
+task:
+    name: rombuilder
+    timeout_in: 120m
+    container:
+      image: shazuxdubuntu/ubuntu:latest
+      cpu: 8
+      memory: 32G
+    build_rom_script:
+      - wget
+      - python3 build_rom.py
